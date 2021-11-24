@@ -51,6 +51,7 @@ namespace SkyNet
                 .AddEntityFrameworkStores<SkyNetDbContext>();
 
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

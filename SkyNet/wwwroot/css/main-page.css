@@ -10,26 +10,6 @@
     padding: 20px;
 }
 
-.row {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-}
-
-/*.footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #edeef0;
-}
-
-.topnav {
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    background-color: white;
-}*/
-
 .main-img {
     width: 100%;
     max-width: max-content;

@@ -14,16 +14,16 @@
 <form method="get" asp-controller="Register" asp-action="RegisterPart2">
     <div asp-validation-summary="ModelOnly"></div>
     <div class="mb-3">
-        <label asp-for="FirstName"></label><br />
-        <input asp-for="FirstName" class="form-control" />
+        <label class="col-form-label" asp-for="FirstName"></label><br />
+        <input class="form-control" asp-for="FirstName" />
         <span asp-validation-for="FirstName"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="LastName"></label><br />
-        <input asp-for="LastName" class="form-control" />
+        <label class="col-form-label" asp-for="LastName"></label><br />
+        <input class="form-control" asp-for="LastName" />
         <span asp-validation-for="LastName"></span>
     </div>
     <div class="mb-3">
-        <input type="submit" value="Регистрация" class="btn btn-primary" />
+        <input class="btn btn-primary" type="submit" value="Регистрация" />
     </div>
 </form>

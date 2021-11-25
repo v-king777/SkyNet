@@ -22,3 +22,9 @@
 .background-white {
     background-color: white;
 }
+
+.block-reg {
+    margin: 20px;
+    padding: 30px;
+    align-content: center;
+}

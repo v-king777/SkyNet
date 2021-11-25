@@ -7,23 +7,25 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"></script>
 
-<div class="mb-3">
-    <h2>Регистрация нового пользователя</h2>
+<div class="block-reg background-white">
+    <div class="text-center mb-3">
+        <h2>Впервые с нами?</h2>
+    </div>
+    <div class="text-center text-muted mb-3">
+        Регистрация нового пользователя
+    </div>
+    <form method="get" asp-controller="Register" asp-action="RegisterPart2">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="mb-3">
+            <input class="form-control" asp-for="FirstName" />
+            <span class="text-danger" asp-validation-for="FirstName"></span>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" asp-for="LastName" />
+            <span class="text-danger" asp-validation-for="LastName"></span>
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-success btn-lg w-100" type="submit" value="Регистрация" />
+        </div>
+    </form>
 </div>
-
-<form method="get" asp-controller="Register" asp-action="RegisterPart2">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div class="mb-3">
-        <label class="col-form-label" asp-for="FirstName"></label><br />
-        <input class="form-control" asp-for="FirstName" />
-        <span asp-validation-for="FirstName"></span>
-    </div>
-    <div class="mb-3">
-        <label class="col-form-label" asp-for="LastName"></label><br />
-        <input class="form-control" asp-for="LastName" />
-        <span asp-validation-for="LastName"></span>
-    </div>
-    <div class="mb-3">
-        <input class="btn btn-primary" type="submit" value="Регистрация" />
-    </div>
-</form>

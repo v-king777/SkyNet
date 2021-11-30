@@ -12,7 +12,7 @@
         <h2>Впервые с нами?</h2>
     </div>
     <div class="text-center text-muted mb-3">
-        Регистрация нового пользователя
+        Тогда зарегистрируйтесь!
     </div>
 
     <form method="get" asp-controller="Register" asp-action="RegisterPart2">
@@ -26,11 +26,11 @@
             <span class="text-danger" asp-validation-for="LastName"></span>
         </div>
 
-        <div class="text-left text-muted mb-3">
-            Дата рождения
+        <div class="text-left text-muted mb-1">
+            Введите дату рождения
         </div>
 
-        <div class="mb-3">
+        <div class="form-inline mb-3">
             <select class="form-control date_control" asp-for="Date" ID="ddlDay">
                 <option value="">@Model.Date</option>
             </select>

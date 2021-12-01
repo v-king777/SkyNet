@@ -8,12 +8,12 @@ namespace SkyNet.ViewModels.Account
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
+        [Required(ErrorMessage = "Поле 'Email' обязательно для заполнения")]
         [EmailAddress]
         [Display(Name = "Email", Prompt = "Введите email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
+        [Required(ErrorMessage = "Поле 'Пароль' обязательно для заполнения")]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль", Prompt = "Введите пароль")]
         public string Password { get; set; }

@@ -6,6 +6,8 @@
 
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <div class="block-reg background-white">
     <div class="text-center mb-3">
@@ -36,7 +38,7 @@
             </select>
             <span class="text-danger" asp-validation-for="Date"></span>
 
-            <select class="form-control date_control" asp-for="Month"
+            <select class="form-control date_control m-auto" asp-for="Month"
                     asp-items="Html.GetEnumSelectList<SkyNet.ViewModels.Months>()"
                     onchange="PopulateDays()" ID="ddlMonth">
                 <option value="">@Model.Month</option>
@@ -59,37 +61,4 @@
             <input class="btn btn-success btn-lg w-100" type="submit" value="Регистрация" />
         </div>
     </form>
-
-    @Model.Month
-
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript">
-        function PopulateDays() {
-            var ddlMonth = document.getElementById("ddlMonth");
-            var ddlYear = document.getElementById("ddlYear");
-            var ddlDay = document.getElementById("ddlDay");
-
-            var y = ddlYear.options[ddlYear.selectedIndex].value;
-            var m = ddlMonth.options[ddlMonth.selectedIndex].value != 0;
-
-            if (ddlMonth.options[ddlMonth.selectedIndex].value != 0 &&
-                ddlYear.options[ddlYear.selectedIndex].value != 0) {
-
-                var dayCount = 32 - new Date(ddlYear.options[ddlYear.selectedIndex].value,
-                    ddlMonth.options[ddlMonth.selectedIndex].value - 1, 32).getDate();
-                ddlDay.options.length = 0;
-
-                for (var i = 1; i <= dayCount; i++) {
-                    AddOption(ddlDay, i, i);
-                }
-            }
-        }
-
-        function AddOption(ddl, text, value) {
-            var opt = document.createElement("OPTION");
-            opt.text = text;
-            opt.value = value;
-            ddl.options.add(opt);
-        }
-    </script>
 </div>

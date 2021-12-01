@@ -29,7 +29,7 @@ namespace SkyNet.ViewModels.Account
         public int? Date { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Месяц", Prompt = "Введите мксяц рождения")]
+        [Display(Name = "Месяц", Prompt = "Введите месяц рождения")]
         public int? Month { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]

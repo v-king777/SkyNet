@@ -6,8 +6,6 @@
 
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <div class="block-reg background-white">
     <div class="text-center mb-3">
@@ -47,10 +45,10 @@
 
             <select class="form-control date_control" asp-for="Year" ID="ddlYear"
                     asp-items="Enumerable.Range(
-                    DateTime.Now.AddYears(-100).Year,
-                    DateTime.Now.AddYears(-14).Year -
-                    DateTime.Now.AddYears(-100).Year)
-                    .Reverse().Select(x=> new SelectListItem(x.ToString(), x.ToString()))"
+                        DateTime.Now.AddYears(-100).Year,
+                        DateTime.Now.AddYears(-14).Year -
+                        DateTime.Now.AddYears(-100).Year)
+                        .Reverse().Select(x=> new SelectListItem(x.ToString(), x.ToString()))"
                     onchange="PopulateDays()">
                 <option value="">@Model.Year</option>
             </select>

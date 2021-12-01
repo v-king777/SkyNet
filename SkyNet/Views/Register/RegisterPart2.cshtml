@@ -6,8 +6,6 @@
 
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <div class="mb-3">
     <h2>Регистрация нового пользователя</h2>
@@ -32,29 +30,15 @@
         <span class="text-danger" asp-validation-for="EmailReg"></span>
     </div>
     <div class="mb-3">
-        <select class="form-control date_control" asp-for="Date" ID="ddlDay">
-            <option value="">@Model.Date</option>
-        </select>
+        <input class="form-control date_control" asp-for="Date">
         <span class="text-danger" asp-validation-for="Date"></span>
     </div>
     <div class="mb-3">
-        <select class="form-control date_control" asp-for="Month"
-                asp-items="Html.GetEnumSelectList<SkyNet.ViewModels.Months>()"
-                onchange="PopulateDays()" ID="ddlMonth">
-            <option value="">@Model.Month</option>
-        </select>
+        <input class="form-control date_control" asp-for="Month">
         <span class="text-danger" asp-validation-for="Month"></span>
     </div>
     <div class="mb-3">
-        <select class="form-control date_control" asp-for="Year" ID="ddlYear"
-                asp-items="Enumerable.Range(
-                    DateTime.Now.AddYears(-100).Year,
-                    DateTime.Now.AddYears(-14).Year -
-                    DateTime.Now.AddYears(-100).Year)
-                    .Reverse().Select(x=> new SelectListItem(x.ToString(), x.ToString()))"
-                onchange="PopulateDays()">
-            <option value="">@Model.Year</option>
-        </select>
+        <input class="form-control date_control" asp-for="Year">
         <span class="text-danger" asp-validation-for="Year"></span>
     </div>
     <div class="mb-3">

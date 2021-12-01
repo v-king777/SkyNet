@@ -63,7 +63,7 @@ namespace SkyNet.Controllers.Account
                 }
             }
 
-            return View("Login", model);
+            return View("Views/Home/Index.cshtml", new MainViewModel());
         }
 
         [Route("Logout")]

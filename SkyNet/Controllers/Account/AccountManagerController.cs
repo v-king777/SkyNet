@@ -59,7 +59,7 @@ namespace SkyNet.Controllers.Account
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                    ModelState.AddModelError("", "Неверный логин и (или) пароль");
                 }
             }
 

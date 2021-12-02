@@ -43,7 +43,7 @@ namespace SkyNet
                 .AddDbContext<SkyNetDbContext>(options => options.UseSqlServer(connection))
                 .AddIdentity<User, IdentityRole>(opts =>
                 {
-                    opts.Password.RequiredLength = 5;
+                    opts.Password.RequiredLength = 8;
                     opts.Password.RequireNonAlphanumeric = false;
                     opts.Password.RequireLowercase = false;
                     opts.Password.RequireUppercase = false;

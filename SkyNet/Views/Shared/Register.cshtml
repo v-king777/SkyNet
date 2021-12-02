@@ -16,7 +16,6 @@
     </div>
 
     <form method="get" asp-controller="Register" asp-action="RegisterPart2">
-        <div asp-validation-summary="ModelOnly"></div>
         <div class="mb-3">
             <input class="form-control" asp-for="FirstName" />
             <span class="text-danger" asp-validation-for="FirstName"></span>

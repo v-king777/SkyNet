@@ -24,30 +24,26 @@ namespace SkyNet
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = Configuration.GetConnectionString("DefaultConnection");
-
-            var mapperConfig = new MapperConfiguration((v) =>
-            {
-                v.AddProfile(new MappingProfile());
-            });
-
-            IMapper mapper = mapperConfig.CreateMapper();
+            var connection = Configuration.GetConnectionString("DefaultConnection");
+            var mapperConfig = new MapperConfiguration((conf) =>
+                conf.AddProfile(new MappingProfile()));
+            var mapper = mapperConfig.CreateMapper();
 
             services.AddSingleton(mapper);
+            services.AddDbContext<SkyNetDbContext>(opt => opt.UseSqlite(connection));
 
-            services
-                .AddDbContext<SkyNetDbContext>(options => options.UseSqlite(connection))
-                .AddIdentity<User, IdentityRole>(opts =>
+            services.AddIdentity<User, IdentityRole>(setup =>
                 {
-                    opts.Password.RequiredLength = 8;
-                    opts.Password.RequireNonAlphanumeric = false;
-                    opts.Password.RequireLowercase = false;
-                    opts.Password.RequireUppercase = false;
-                    opts.Password.RequireDigit = false;
+                    setup.Password.RequiredLength = 8;
+                    setup.Password.RequireNonAlphanumeric = false;
+                    setup.Password.RequireLowercase = false;
+                    setup.Password.RequireUppercase = false;
+                    setup.Password.RequireDigit = false;
+                    setup.SignIn.RequireConfirmedAccount = false;
                 })
                 .AddEntityFrameworkStores<SkyNetDbContext>();
 

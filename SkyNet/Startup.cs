@@ -40,7 +40,7 @@ namespace SkyNet
             services.AddSingleton(mapper);
 
             services
-                .AddDbContext<SkyNetDbContext>(options => options.UseSqlServer(connection))
+                .AddDbContext<SkyNetDbContext>(options => options.UseSqlite(connection))
                 .AddIdentity<User, IdentityRole>(opts =>
                 {
                     opts.Password.RequiredLength = 8;

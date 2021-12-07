@@ -27,7 +27,7 @@ namespace SkyNet.Controllers.Account
         [HttpGet]
         public IActionResult Login()
         {
-            return View("Home/Login");
+            return View("Login");
         }
 
         [HttpGet]
@@ -63,7 +63,7 @@ namespace SkyNet.Controllers.Account
                 }
             }
 
-            return View("Views/Home/Index.cshtml", new MainViewModel());
+            return View("~/Views/Home/Index.cshtml", new MainViewModel());
         }
 
         [Route("Logout")]

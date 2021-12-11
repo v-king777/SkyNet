@@ -1,0 +1,19 @@
+@using Microsoft.AspNetCore.Identity
+@using SkyNet.Models.Users
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text" asp-area="" asp-controller="Home" title="Manage">Привет, @User.Identity.Name!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="" asp-controller="AccountManager" asp-action="Logout"
+                  asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})">
+                <button type="submit" class="btn btn-outline-primary">Выйти</button>
+            </form>
+        </li>
+    }
+</ul>

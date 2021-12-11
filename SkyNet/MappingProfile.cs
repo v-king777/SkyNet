@@ -13,9 +13,11 @@ namespace SkyNet
         public MappingProfile()
         {
             CreateMap<RegisterViewModel, User>()
-                .ForMember(x => x.BirthDate, opt => opt.MapFrom(c => new DateTime((int)c.Year, (int)c.Month, (int)c.Date)))
-                .ForMember(x => x.Email, opt => opt.MapFrom(c => c.EmailReg))
-                .ForMember(x => x.UserName, opt => opt.MapFrom(c => c.Login));
+                .ForMember(user => user.BirthDate, expression => 
+                    expression.MapFrom(model => 
+                        new DateTime((int)model.Year, (int)model.Month, (int)model.Date)))
+                .ForMember(user => user.UserName, expression => 
+                    expression.MapFrom(model => model.EmailReg));
             CreateMap<LoginViewModel, User>();
         }
     }

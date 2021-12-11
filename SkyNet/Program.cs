@@ -53,10 +53,8 @@ var cachePeriod = "0";
 
 app.UseStaticFiles(new StaticFileOptions
 {
-    OnPrepareResponse = ctx =>
-    {
-        ctx.Context.Response.Headers.Append("Cache-Control", $"public, max-age={cachePeriod}");
-    }
+    OnPrepareResponse = context =>
+        context.Context.Response.Headers.Append("Cache-Control", $"public, max-age={cachePeriod}")
 });
 
 app.UseRouting();

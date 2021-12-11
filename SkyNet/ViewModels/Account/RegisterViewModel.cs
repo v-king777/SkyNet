@@ -17,10 +17,6 @@ namespace SkyNet.ViewModels.Account
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Никнейм", Prompt = "Введите никнейм")]
-        public string Login { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Email", Prompt = "Введите email")]
         public string EmailReg { get; set; }
 

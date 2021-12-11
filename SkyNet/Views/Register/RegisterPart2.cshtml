@@ -26,15 +26,15 @@
     </div>
     <div class="row mb-3">
         <div class="col-sm-auto">
-            <input class="form-control date_control" asp-for="Date">
+            <input class="form-control" asp-for="Date" min="1" max="31">
             <span class="text-danger" asp-validation-for="Date"></span>
         </div>
         <div class="col-sm-auto">
-            <input class="form-control date_control" asp-for="Month">
+            <input class="form-control" asp-for="Month" min="1" max="12">
             <span class="text-danger" asp-validation-for="Month"></span>
         </div>
         <div class="col-sm-auto">
-            <input class="form-control date_control" asp-for="Year">
+            <input class="form-control" asp-for="Year" min="@(DateTime.Now.Year - 100)" max="@(DateTime.Now.Year - 15)">
             <span class="text-danger" asp-validation-for="Year"></span>
         </div>
     </div>

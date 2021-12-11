@@ -28,13 +28,13 @@
 
         <div class="row mb-3">
             <div class="col-sm-auto">
-                <select class="form-control date_control" asp-for="Date" ID="ddlDay">
+                <select class="form-control" asp-for="Date" ID="ddlDay">
                     <option value="">@Model.Date</option>
                 </select>
                 <span class="text-danger" asp-validation-for="Date"></span>
             </div>
             <div class="col-sm-auto">
-                <select class="form-control date_control" asp-for="Month"
+                <select class="form-control" asp-for="Month"
                         asp-items="Html.GetEnumSelectList<SkyNet.ViewModels.Months>()"
                         onchange="PopulateDays()" ID="ddlMonth">
                     <option value="">@Model.Month</option>
@@ -42,7 +42,7 @@
                 <span class="text-danger" asp-validation-for="Month"></span>
             </div>
             <div class="col-sm-auto">
-                <select class="form-control date_control" asp-for="Year" ID="ddlYear"
+                <select class="form-control" asp-for="Year" ID="ddlYear"
                         asp-items="Enumerable.Range(
                             DateTime.Now.AddYears(-100).Year, 
                             DateTime.Now.AddYears(-14).Year - 

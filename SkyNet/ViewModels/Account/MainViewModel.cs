@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SkyNet.ViewModels.Account
+﻿namespace SkyNet.ViewModels.Account
 {
     public class MainViewModel
     {

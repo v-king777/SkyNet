@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SkyNet.Models.Users;
 using SkyNet.ViewModels.Account;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SkyNet.Controllers.Account

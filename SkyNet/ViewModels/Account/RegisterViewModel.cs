@@ -12,6 +12,7 @@ namespace SkyNet.ViewModels.Account
         [Display(Name = "Фамилия", Prompt = "Введите фамилию")]
         public string LastName { get; set; }
         
+        [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Отчество", Prompt = "Введите отчество")]
         public string MiddleName { get; set; }
 

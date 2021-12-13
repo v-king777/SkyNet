@@ -13,15 +13,15 @@
         ФИО
     </div>
     <div class="row mb-3">
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="LastName"/>
             <span class="text-danger" asp-validation-for="LastName"></span>
         </div>
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="FirstName"/>
             <span class="text-danger" asp-validation-for="FirstName"></span>
         </div>
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="MiddleName"/>
             <span class="text-danger" asp-validation-for="MiddleName"></span>
         </div>
@@ -30,7 +30,7 @@
         Электронная почта
     </div>
     <div class="row mb-3">
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="EmailReg"/>
             <span class="text-danger" asp-validation-for="EmailReg"></span>
         </div>
@@ -39,15 +39,15 @@
         Дата рождения
     </div>
     <div class="row mb-3">
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="Date" min="1" max="31">
             <span class="text-danger" asp-validation-for="Date"></span>
         </div>
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="Month" min="1" max="12">
             <span class="text-danger" asp-validation-for="Month"></span>
         </div>
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="Year" min="@(DateTime.Now.Year - 100)" max="@(DateTime.Now.Year - 15)">
             <span class="text-danger" asp-validation-for="Year"></span>
         </div>
@@ -56,11 +56,11 @@
         Пароль
     </div>
     <div class="row mb-3">
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="PasswordReg"/>
             <span class="text-danger" asp-validation-for="PasswordReg"></span>
         </div>
-        <div class="col-sm-auto">
+        <div class="col-auto">
             <input class="form-control" asp-for="PasswordConfirm"/>
             <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
         </div>

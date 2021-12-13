@@ -24,13 +24,13 @@
             Введите дату рождения
         </div>
         <div class="row mb-3">
-            <div class="col-sm-auto">
+            <div class="col-auto">
                 <select class="form-control" asp-for="Date" ID="ddlDay">
                     <option value="">@Model.Date</option>
                 </select>
                 <span class="text-danger" asp-validation-for="Date"></span>
             </div>
-            <div class="col-sm-auto">
+            <div class="col-auto">
                 <select class="form-control" asp-for="Month"
                         asp-items="Html.GetEnumSelectList<SkyNet.ViewModels.Months>()"
                         onchange="PopulateDays()" ID="ddlMonth">
@@ -38,7 +38,7 @@
                 </select>
                 <span class="text-danger" asp-validation-for="Month"></span>
             </div>
-            <div class="col-sm-auto">
+            <div class="col-auto">
                 <select class="form-control" asp-for="Year" ID="ddlYear"
                         asp-items="Enumerable.Range(
                             DateTime.Now.AddYears(-100).Year, 

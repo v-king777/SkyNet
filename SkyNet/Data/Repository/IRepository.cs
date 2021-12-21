@@ -12,6 +12,6 @@ namespace SkyNet.Data.Repository
 
         void Update(T item);
 
-        void Delete(int id);
+        void Delete(T item);
     }
 }

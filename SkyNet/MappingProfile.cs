@@ -17,7 +17,18 @@ namespace SkyNet
                     expression.MapFrom(model => model.EmailReg))
                 .ForMember(user => user.Email, expression => 
                     expression.MapFrom(model => model.EmailReg));
+            
             CreateMap<LoginViewModel, User>();
+            
+            CreateMap<UserEditViewModel, User>();
+            
+            CreateMap<User, UserEditViewModel>()
+                .ForMember(model=>model.UserId, expression => 
+                    expression.MapFrom(user => user.Id));
+
+            CreateMap<UserWithFriendExt, User>();
+            
+            CreateMap<User, UserWithFriendExt>();
         }
     }
 }

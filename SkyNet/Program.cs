@@ -8,19 +8,23 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SkyNet;
 using SkyNet.Data;
+using SkyNet.Data.Repository;
+using SkyNet.Extentions;
 using SkyNet.Models.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<SkyNetDbContext>(options => options.UseSqlite(connectionString));
-
 var mapperConfig = new MapperConfiguration((expression) => expression.AddProfile(new MappingProfile()));
 var mapper = mapperConfig.CreateMapper();
 
+builder.Services.AddDbContext<SkyNetDbContext>(options => options.UseSqlite(connectionString));
 builder.Services.AddSingleton(mapper);
+builder.Services.AddUnitOfWork();
+builder.Services.AddCustomRepository<Message, MessageRepository>();
+builder.Services.AddCustomRepository<Friend, FriendsRepository>();
+
 builder.Services.AddIdentity<User, IdentityRole>(options =>
     {
         options.Password.RequiredLength = 8;
@@ -66,6 +70,6 @@ app.UseEndpoints(endpoints =>
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
     endpoints.MapRazorPages();
-    
+
     app.Run();
 });

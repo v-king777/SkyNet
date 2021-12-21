@@ -7,17 +7,17 @@ namespace SkyNet.Data.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private SkyNetDbContext _context;
+        private SkyNetDbContext _appContext;
+
         private Dictionary<Type, object> _repositories;
 
-        public UnitOfWork(SkyNetDbContext context)
+        public UnitOfWork(SkyNetDbContext app)
         {
-            _context = context;
+            this._appContext = app;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
         }
 
         public IRepository<TEntity> GetRepository<TEntity>(bool hasCustomRepository = true) where TEntity : class
@@ -29,8 +29,8 @@ namespace SkyNet.Data.UoW
 
             if (hasCustomRepository)
             {
-                var customRepo = _context.GetService<IRepository<TEntity>>();
-
+                var customRepo = _appContext.GetService<IRepository<TEntity>>();
+                
                 if (customRepo != null)
                 {
                     return customRepo;
@@ -38,13 +38,13 @@ namespace SkyNet.Data.UoW
             }
 
             var type = typeof(TEntity);
-
+            
             if (!_repositories.ContainsKey(type))
             {
-                _repositories[type] = new Repository<TEntity>(_context);
+                _repositories[type] = new Repository<TEntity>(_appContext);
             }
 
-            return (IRepository<TEntity>)_repositories[type];
+            return (IRepository<TEntity>) _repositories[type];
         }
 
         public int SaveChanges(bool ensureAutoHistory = false)

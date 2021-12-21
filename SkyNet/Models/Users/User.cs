@@ -26,7 +26,7 @@ namespace SkyNet.Models.Users
 
         public string About { get; set; }
 
-        public string GetFullName() 
+        public string GetFullName()
         {
             return LastName + " " + FirstName + " " + MiddleName;
         }

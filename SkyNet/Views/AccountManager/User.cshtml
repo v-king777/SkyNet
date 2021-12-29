@@ -1,11 +1,8 @@
 @model SkyNet.ViewModels.Account.UserViewModel; 
 
 <div class="block-reg background-white">
-
-    <h4 class="center">@Model.User.GetFullName()</h4>
-
+    <h3 class="center">@Model.User.GetFullName()</h3>
     <div class="row">
-
         <div class="main">
             <img class="main-img mb-2" src="@Model.User.Image"/>
             <div class="center-align">
@@ -14,7 +11,6 @@
                 </form>
             </div>
         </div>
-
         <div class="side">
             <div class="lined-block">
                 <div>
@@ -38,7 +34,6 @@
                 </div>
 
             </div>
-
             <div class="lined-block friendcontainer">
                 <label class="gray-text">Список друзей</label>
 
@@ -78,10 +73,7 @@
                         </div>
                     }
                 </div>
-
             </div>
         </div>
-
     </div>
-
 </div>

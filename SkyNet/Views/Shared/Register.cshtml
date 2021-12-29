@@ -5,25 +5,25 @@
 }
 
 <div class="block-reg background-white">
-    <div class="text-center mb-2">
+    <div class="text-center mb-3">
         <h2>Впервые здесь?</h2>
     </div>
-    <div class="text-center text-muted mb-2">
+    <div class="text-center text-muted mb-3">
         Тогда зарегистрируйтесь!
     </div>
     <form method="get" asp-controller="Register" asp-action="RegisterPart2">
-        <div class="mb-2">
+        <div class="mb-3">
             <input class="form-control" asp-for="FirstName"/>
             <span class="text-danger" asp-validation-for="FirstName"></span>
         </div>
-        <div class="mb-2">
+        <div class="mb-3">
             <input class="form-control" asp-for="LastName"/>
             <span class="text-danger" asp-validation-for="LastName"></span>
         </div>
         <div class="text-left text-muted mb-1">
             Введите дату рождения
         </div>
-        <div class="row mb-2">
+        <div class="row mb-3">
             <div class="col-auto">
                 <select class="form-control" asp-for="Date" ID="ddlDay">
                     <option value="">@Model.Date</option>
@@ -40,18 +40,14 @@
             </div>
             <div class="col-auto">
                 <select class="form-control" asp-for="Year" ID="ddlYear"
-                        asp-items="Enumerable.Range(
-                            DateTime.Now.AddYears(-100).Year, 
-                            DateTime.Now.AddYears(-14).Year - 
-                            DateTime.Now.AddYears(-100).Year)
-                        .Reverse().Select(x => new SelectListItem(x.ToString(), x.ToString()))"
+                        asp-items="Enumerable.Range(DateTime.Now.AddYears(-100).Year, DateTime.Now.AddYears(-14).Year - DateTime.Now.AddYears(-100).Year).Reverse().Select(x => new SelectListItem(x.ToString(), x.ToString()))"
                         onchange="PopulateDays()">
                     <option value="">@Model.Year</option>
                 </select>
                 <span class="text-danger" asp-validation-for="Year"></span>
             </div>
         </div>
-        <div class="mb-2">
+        <div class="mb-3">
             <input class="btn btn-success btn-lg w-100" type="submit" value="Регистрация"/>
         </div>
     </form>

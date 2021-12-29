@@ -5,25 +5,25 @@
 }
 
 <div class="block-reg background-white">
-    <div class="text-center mb-3">
+    <div class="text-center mb-2">
         <h2>Впервые здесь?</h2>
     </div>
-    <div class="text-center text-muted mb-3">
+    <div class="text-center text-muted mb-2">
         Тогда зарегистрируйтесь!
     </div>
     <form method="get" asp-controller="Register" asp-action="RegisterPart2">
-        <div class="mb-3">
+        <div class="mb-2">
             <input class="form-control" asp-for="FirstName"/>
             <span class="text-danger" asp-validation-for="FirstName"></span>
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <input class="form-control" asp-for="LastName"/>
             <span class="text-danger" asp-validation-for="LastName"></span>
         </div>
         <div class="text-left text-muted mb-1">
             Введите дату рождения
         </div>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-auto">
                 <select class="form-control" asp-for="Date" ID="ddlDay">
                     <option value="">@Model.Date</option>
@@ -51,7 +51,7 @@
                 <span class="text-danger" asp-validation-for="Year"></span>
             </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <input class="btn btn-success btn-lg w-100" type="submit" value="Регистрация"/>
         </div>
     </form>

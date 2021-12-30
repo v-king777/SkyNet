@@ -9,14 +9,8 @@
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div>
             <div class="mrgn">
-                <input asp-for="UserId" class="form-control"/>
+                <input readonly asp-for="UserId" class="form-control"/>
                 <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
-        </div>
-        <div>
-            <div class="mrgn">
-                <input asp-for="FirstName" class="form-control"/>
-                <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
         </div>
         <div>
@@ -27,14 +21,21 @@
         </div>
         <div>
             <div class="mrgn">
+                <input asp-for="FirstName" class="form-control"/>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div>
+            <div class="mrgn">
                 <input asp-for="MiddleName" class="form-control"/>
                 <span asp-validation-for="MiddleName" class="text-danger"></span>
             </div>
         </div>
-        <div class="mrgn">
-            <input asp-for="BirthDate" class="form-control date_control"/>
-            <span asp-validation-for="BirthDate" class="text-danger"></span>
-
+        <div>
+            <div class="mrgn">
+                <input asp-for="BirthDate" class="form-control date_control"/>
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
         </div>
         <div>
             <div class="mrgn">

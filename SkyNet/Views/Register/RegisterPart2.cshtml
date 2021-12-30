@@ -11,7 +11,7 @@
         <div class="text-muted mb-1">
             ФИО
         </div>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-auto">
                 <input class="form-control" asp-for="LastName"/>
                 <span class="text-danger" asp-validation-for="LastName"></span>
@@ -28,7 +28,7 @@
         <div class="text-muted mb-1">
             Электронная почта
         </div>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-auto">
                 <input class="form-control" asp-for="EmailReg"/>
                 <span class="text-danger" asp-validation-for="EmailReg"></span>
@@ -37,7 +37,7 @@
         <div class="text-muted mb-1">
             Дата рождения
         </div>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-auto">
                 <input class="form-control" asp-for="Date" min="1" max="31">
                 <span class="text-danger" asp-validation-for="Date"></span>
@@ -54,7 +54,7 @@
         <div class="text-muted mb-1">
             Пароль
         </div>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-auto">
                 <input class="form-control" asp-for="PasswordReg"/>
                 <span class="text-danger" asp-validation-for="PasswordReg"></span>
@@ -64,7 +64,7 @@
                 <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
             </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-1">
             <input class="btn btn-success btn-lg w-100" type="submit" value="Регистрация"/>
         </div>
     </form>

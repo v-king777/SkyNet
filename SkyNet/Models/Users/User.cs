@@ -7,7 +7,7 @@ namespace SkyNet.Models.Users
     {
         public User() 
         {
-            Image = "https://thispersondoesnotexist.com/image";
+            Image = "https://via.placeholder.com/500";
             Status = "Ура! Я в соцсети!";
             About = "Информация обо мне";
         }

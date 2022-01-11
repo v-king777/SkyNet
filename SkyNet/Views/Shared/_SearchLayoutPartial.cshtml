@@ -1,6 +1,16 @@
-<div class="righ-align">
-    <form asp-area="" asp-controller="AccountManager" asp-action="UserList" method="get">
-        <i class="fa fa-search"></i>
-        <input type="text" placeholder="Поиск друзей" name="search">
-    </form>
-</div>
+@using Microsoft.AspNetCore.Identity
+@using SkyNet.Models.Users
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <form asp-area="" asp-controller="AccountManager" asp-action="UserList" method="get">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Поиск друзей" name="search">
+            </form>
+        </li>
+    }
+</ul>

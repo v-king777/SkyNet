@@ -214,7 +214,7 @@ namespace SkyNet.Controllers.Account
             var currentuser = User;
             var result = await _userManager.GetUserAsync(currentuser);
             var list = _userManager.Users.AsEnumerable()
-                .Where(x => x.GetFullName().ToLower().Contains(search.ToLower())).ToList();
+                .Where(x => x.GetFullName().ToLower().Contains(search.Trim().ToLower())).ToList();
             var withfriend = await GetAllFriend();
             var data = new List<UserWithFriendExt>();
 

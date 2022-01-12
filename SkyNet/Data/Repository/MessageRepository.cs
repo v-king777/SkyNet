@@ -7,8 +7,7 @@ namespace SkyNet.Data.Repository;
 
 public class MessageRepository : Repository<Message>
 {
-    public MessageRepository(SkyNetDbContext db)
-        : base(db)
+    public MessageRepository(SkyNetDbContext db) : base(db)
     {
     }
 
@@ -21,9 +20,11 @@ public class MessageRepository : Repository<Message>
         var to = Set.AsEnumerable().Where(x => x.SenderId == recipient.Id && x.RecipientId == sender.Id).ToList();
 
         var itog = new List<Message>();
+
         itog.AddRange(from);
         itog.AddRange(to);
         itog.OrderBy(x => x.Id);
+
         return itog;
     }
 }

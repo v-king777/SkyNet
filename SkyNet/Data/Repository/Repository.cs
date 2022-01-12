@@ -12,11 +12,8 @@ namespace SkyNet.Data.Repository
         public Repository(SkyNetDbContext db)
         {
             _db = db;
-            
-            var set =_db.Set<T>();
-            
+            var set = _db.Set<T>();
             set.Load();
-
             Set = set;
         }
 

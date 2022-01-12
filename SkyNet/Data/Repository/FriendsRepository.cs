@@ -7,14 +7,13 @@ namespace SkyNet.Data.Repository;
 
 public class FriendsRepository : Repository<Friend>
 {
-    public FriendsRepository(SkyNetDbContext db)
-        : base(db)
+    public FriendsRepository(SkyNetDbContext db) : base(db)
     {
     }
 
-    public void AddFriend(User target, User Friend)
+    public void AddFriend(User target, User friend)
     {
-        var friends = Set.AsEnumerable().FirstOrDefault(x => x.UserId == target.Id && x.CurrentFriendId == Friend.Id);
+        var friends = Set.AsEnumerable().FirstOrDefault(x => x.UserId == target.Id && x.CurrentFriendId == friend.Id);
 
         if (friends == null)
         {
@@ -22,8 +21,8 @@ public class FriendsRepository : Repository<Friend>
             {
                 UserId = target.Id,
                 User = target,
-                CurrentFriend = Friend,
-                CurrentFriendId = Friend.Id,
+                CurrentFriend = friend,
+                CurrentFriendId = friend.Id,
             };
 
             Create(item);
@@ -34,16 +33,15 @@ public class FriendsRepository : Repository<Friend>
     {
         var friends = Set.Include(x => x.CurrentFriend)
             .AsEnumerable()
-            .Where(x => x.User.Id == target.Id)
+            .Where(x => x.User?.Id == target.Id)
             .Select(x => x.CurrentFriend);
 
         return friends.ToList();
     }
 
-
-    public void DeleteFriend(User target, User Friend)
+    public void DeleteFriend(User target, User friend)
     {
-        var friends = Set.AsEnumerable().FirstOrDefault(x => x.UserId == target.Id && x.CurrentFriendId == Friend.Id);
+        var friends = Set.AsEnumerable().FirstOrDefault(x => x.UserId == target.Id && x.CurrentFriendId == friend.Id);
 
         if (friends != null)
         {
